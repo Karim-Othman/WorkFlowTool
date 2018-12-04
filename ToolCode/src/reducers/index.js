@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-
+import WorkFlowsReducer from './WFReducer';
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  workflows: WorkFlowsReducer
 });
 
 export default rootReducer;

@@ -8,8 +8,33 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.css$/,
+        include: /node_modules/,
+        loaders: ['style-loader', 'css-loader']
+      },
+      {
+    test: /\.(scss)$/,
+    use: [{
+      loader: 'style-loader', // inject CSS to page
+    }, {
+      loader: 'css-loader', // translates CSS into CommonJS modules
+    }, {
+      loader: 'postcss-loader', // Run post css actions
+      options: {
+        plugins: function () { // post css plugins, can be exported to postcss.config.js
+          return [
+            require('precss'),
+            require('autoprefixer')
+          ];
+        }
+      }
+    }, {
+      loader: 'sass-loader' // compiles Sass to CSS
+    }]
+  },
+      {
         exclude: /node_modules/,
-        loader:'babel',
+        loader: 'babel',
         query: {
           presets: ['react', 'es2015', 'stage-1']
         }
@@ -17,7 +42,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx', '.css'],
+    modulesDirectories: [
+      'node_modules'
+    ]
   },
   devServer: {
     historyApiFallback: true,
