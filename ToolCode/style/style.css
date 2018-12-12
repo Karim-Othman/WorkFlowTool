@@ -1,19 +1,23 @@
-.srd-demo-canvas {
-    height: 100vh;
-    width: 100%;
-}
+
 
 .BackGround{
-    background-color:lightseagreen;
     width: 100%;
-    position: fixed;
+    height: 100%;
+    align-content: center;
+    align-self: center;
+    align-items: center;
+    background-color:lightseagreen;
     left: 0;
+    overflow-y: scroll;
+    height: 100%;
+    position: fixed;
 }
 
 
 /*footer*/
 .footer-block {
     margin: 2px 0;
+    padding: 5px;
   }
 
   #footer  {
@@ -35,7 +39,7 @@
     padding-top: 3%;
     margin-bottom: 15px;
     padding-right: 15px;
-    padding-left: 10px;
+    padding-left: 15px;
     width: 100%;
     
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Select from 'react-virtualized-select';
-import {GetWorkFlowIDs} from '../actions/index';
+import {GetWorkFlowIDs, GetWorkFlowData} from '../actions/index';
 import createFilterOptions from 'react-select-fast-filter-options';
 import {connect} from 'react-redux';
 
@@ -50,7 +50,7 @@ render(){
 
     return(
 
-        <span>
+        <div>
             
                 <Select
                     name="WorkFlow ID"
@@ -61,6 +61,7 @@ render(){
                         
                         if (val){
                             this.setState({SelectedWF:val});
+                            this.props.GetWorkFlowData(val.value);
                         }
                         
                         }}
@@ -71,7 +72,7 @@ render(){
             
             
               
-        </span>
+        </div>
     );
 }
 
@@ -82,4 +83,4 @@ function mapStateToProps({workflows})
     return {workflows};
 }
 
-export default connect (mapStateToProps, {GetWorkFlowIDs}) (WorkFlowsSearchBar);
+export default connect (mapStateToProps, {GetWorkFlowIDs, GetWorkFlowData}) (WorkFlowsSearchBar);

@@ -1,5 +1,5 @@
-import {Fetch_WorkFlows} from '../actions/index';
-import {GetAllWorkFlowsParserFunction} from '../parsers/WorkflowParser'
+import {Fetch_WorkFlows, Fetch_WFRelativeData} from '../actions/index';
+import {GetAllWorkFlowsParserFunction, TablesRender} from '../parsers/WorkflowParser'
 
 
 export default function WorkFlowsReducer (state={}, action)
