@@ -40,6 +40,6 @@ export function GetWorkFlowData(WorkFlowID){
 
     return{
         type: Fetch_WFRelativeData,
-        payload: Request
+        payload: Request,
     };
 }

@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="node_modules/storm-react-diagrams/dist/style.min.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/48938155eb24b4ccdde09426066869504c6dab3c/dist/css/bootstrap.min.css">
     
-    <link rel="stylesheet" href="https://unpkg.com/react-table@latest/react-table.css">
         <!-- React select dependancies-->
     
     <link rel="stylesheet" href="/node_modules/react-virtualized-select/node_modules/react-select/dist/react-select.css">
@@ -20,15 +19,21 @@
     <script src="/node_modules/react-virtualized-select/dist/umd/react-virtualized-select.js"></script>
     <!-- End of React select dependancies-->
 
+    <!-- React table dependancies-->
+    <link rel="stylesheet" href="node_modules/react-table/react-table.css">
+    <link rel="stylesheet" href="https://unpkg.com/react-table@latest/react-table.css">
+      <!-- JS -->
+    <script src="https://unpkg.com/react-table@latest/react-table.js"></script>
+    <script src="https://unpkg.com/react-table@latest/react-table.min.js"></script>
+
+    <script>
+      var ReactTable = window.ReactTable.default
+    </script>
+    <!-- end of React table dependancies-->
 
     <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="node_modules/storm-react-diagrams/dist/main.js"></script>
-    <script src="https://unpkg.com/react-table@latest/react-table.js"></script>
-    <script src="https://unpkg.com/react-table@latest/react-table.min.js"></script>
-    <script>
-      var ReactTable = window.ReactTable.default
-    </script>
   </head>
   <body>
     <div class="container"></div>

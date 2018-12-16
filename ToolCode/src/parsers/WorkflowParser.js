@@ -67,7 +67,6 @@ export function TablesRender (ActionResponse){
 
     });
 
-    console.log(Tables);
     return Tables ;
 
 }
@@ -108,4 +107,59 @@ function CreateRow (Operation,RowData){
     }
 
     return Row;    
+}
+
+
+export function WFDataParser (ActionResponse){
+
+    // Should loop on every object on WorkFlowData then check if the object is array of object or not
+        // if array of object --> each element will considered a row
+            // each name value pair (sub element) will be considered a column
+        // else each name value pair (sub element) will be considered a column 
+
+    let WorkFlowArray= ActionResponse.payload;
+
+    let TablesColumns= [];
+    let TablesData= [];
+
+    WorkFlowArray.forEach(Obj=>{
+
+        const ObjectData = Obj.data.root.row;      
+        if (ObjectData.length >0){
+            
+            let TableColumn=[];
+            //get Keys of object
+           const Keys = Object.keys(ObjectData[0]);
+           // push every key in coumn temp varibale
+           Keys.map((Key)=>{
+            TableColumn.push({Header:Key,
+                accessor: Key
+            });
+           });
+           TablesColumns.push(TableColumn);
+           TablesData.push(ObjectData);
+        }
+
+        else {
+
+            const Keys = Object.keys(ObjectData);
+            let TableColumn=[];
+            // push every key in coumn temp varibale
+            Keys.map((Key)=>{
+             TableColumn.push({Header:Key,
+                 accessor: Key
+             });
+            });
+
+            TablesColumns.push(TableColumn);
+            TablesData.push([ObjectData]);
+        }
+
+
+
+    });
+
+    return {TablesColumns,
+            TablesData} ;
+
 }

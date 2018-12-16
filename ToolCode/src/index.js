@@ -6,9 +6,9 @@ import promise from 'redux-promise';
 import 'bootstrap';
 import Footer from './components/footer';
 import WorkFlowsSearchBar from './components/searchBar';
-import TablesView from './components/tables'
+import TablesView from './components/tablesContainer'
 //import App from './components/app';
-import StormTrial from './components/StormTrial';
+//import StormTrial from './components/StormTrial';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
